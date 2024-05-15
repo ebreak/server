@@ -1,9 +1,13 @@
+ifeq ($(OS), Windows_NT)
+	link = -lws2_32
+endif
+
 build: src/*.cc
-	g++ -o server.elf src/*.cc -lpyrite -lmocutils -lpthread
+	g++ -o server.exe src/*.cc -lpyrite -lmocutils -lpthread -DWindows $(link)
 
 run: build
-	./server.elf
+	./server.exe
 
 clean:
 	rm -rf *.o
-	rm -rf *.elf
+	rm -rf *.exe
