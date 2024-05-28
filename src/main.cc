@@ -5,7 +5,7 @@ prt::bytes default_handler(sockaddr_in client_addr, prt::bytes data) {
 }
 
 prt::bytes version(sockaddr_in client_addr, prt::bytes data) {
-  return prt::bytes(std::string("1.0.0"));
+  return prt::bytes(std::string("2.0.0"));
 }
 
 int main() {
